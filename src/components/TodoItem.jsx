@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { ListItemButton, ListItemIcon, Paper } from '@mui/material';
 
-
 export default function TodoItem({todo, deleteTodo}) {
   return (
     <Paper style={{ padding: "0.5em 0em" }}>
@@ -18,10 +17,8 @@ export default function TodoItem({todo, deleteTodo}) {
           }
           disablePadding
         >
-          <ListItemButton role={undefined} dense>
             <ListItemIcon>
             </ListItemIcon>
-          </ListItemButton>
           <ListItemText primary={todo.text} />
         </ListItem>
     </Paper>
