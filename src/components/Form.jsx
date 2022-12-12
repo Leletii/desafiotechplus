@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { styled, createTheme, ThemeProvider } from '@mui/system';
 
 
+
 export default function From({  addTodo }){
 
     const [text, setText] = useState(null); 
@@ -15,26 +16,10 @@ export default function From({  addTodo }){
         document.getElementById("standard-basic").value = null;
     };
 
-    const customTheme = createTheme({
-        palette: {
-          primary: {
-            main: '#1976d2',
-            contrastText: 'white',
-          },
-        },
-      });
-
-    const Button = styled('div')(({ theme }) => ({
-        color: theme.palette.primary.contrastText,
-        backgroundColor: theme.palette.primary.main,
-        padding: theme.spacing(1),
-        borderRadius: theme.shape.borderRadius,
-      }));
-
     return (
         <Paper style={{ padding: "1em" }}>
             <h1 className="title"> Lista de Tarefas </h1>
-            <div style={{ display: "flex", justifyContent: "center"}}>
+            <div style={{ display: "flex"}}>
                 <TextField 
                 id="standard-basic" 
                 label="Descrição" 
@@ -42,10 +27,8 @@ export default function From({  addTodo }){
                 onChange={(e) => setText(e.target.value)}
                 fullWidth
                 />
+            <Button variant="contained" onClick={() => todoCreate(text)}> + </Button>
             </div>
-            <ThemeProvider theme={customTheme}>
-                    <Button variant="text" onClick={() => todoCreate(text)}> + </Button>
-            </ThemeProvider>
         </Paper>
     )
 }

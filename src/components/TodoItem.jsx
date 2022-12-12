@@ -6,9 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { ListItemButton, ListItemIcon, Paper } from '@mui/material';
 
+
 export default function TodoItem({todo, deleteTodo}) {
   return (
-    <Paper>
+    <Paper style={{ padding: "0.5em 0em" }}>
         <ListItem
           secondaryAction={
             <IconButton edge="end" aria-label="delete" onClick={() => deleteTodo(todo.id)}>
@@ -19,12 +20,10 @@ export default function TodoItem({todo, deleteTodo}) {
         >
           <ListItemButton role={undefined} dense>
             <ListItemIcon>
-
             </ListItemIcon>
           </ListItemButton>
-        <ListItemText primary={todo.text} />
+          <ListItemText primary={todo.text} />
         </ListItem>
-      
     </Paper>
   );
 }
